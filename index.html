@@ -1278,6 +1278,17 @@
                                             Bahawalnagar,<br> Punjab, Pakistan</a>
                                     </div>
                                 </li>
+
+                                <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;">
+                                    <div class="icon-box">
+                                        <span id="visitCount"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p>Portfolio</p>
+                                        <a href="https://maps.app.goo.gl/rLkR3HbtT7K6xeM77">Visitors<br></a>
+                                    </div>
+                                </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -1365,6 +1376,33 @@
             // Open default email client
             window.location.href = mailtoLink;
         }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Function to update the visitor count
+    function updateVisitorCount() {
+        // Check if visitCount exists in localStorage
+        let visitCount = localStorage.getItem('visitCount');
+        
+        if (visitCount) {
+            // Increment the visit count
+            visitCount = parseInt(visitCount) + 1;
+        } else {
+            // Initialize the visit count
+            visitCount = 102;
+        }
+
+        // Update the localStorage with the new count
+        localStorage.setItem('visitCount', visitCount);
+
+        // Update the HTML to display the new count
+        document.getElementById('visitCount').innerText = visitCount;
+    }
+
+    // Call the function to update the visitor count on page load
+    updateVisitorCount();
+});
     </script>
 </body>
 
